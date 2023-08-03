@@ -3,7 +3,7 @@ title: "An Architecture for More Instant Messaging Interoperability (MIMI)"
 abbrev: "MIMI Architecture"
 category: info
 
-docname: draft-barnes-mimi-arch
+docname: draft-barnes-mimi-arch-latest
 submissiontype: IETF
 number:
 date:
