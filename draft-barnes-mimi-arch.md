@@ -9,17 +9,17 @@ number:
 date:
 consensus: true
 v: 3
-area: ART
-workgroup: MIMI Working Group
+area: "Applications and Real-Time"
+workgroup: "More Instant Messaging Interoperability"
 keyword:
  - messaging
  - end-to-end security
 venue:
-  group: MIMI
-  type: Working Group
-  mail: mimi@ietf.org
-  arch: https://mailarchive.ietf.org/arch/browse/mimi/
-  github: bifurcation/mimi-arch
+  group: "More Instant Messaging Interoperability"
+  type: "Working Group"
+  mail: "mimi@ietf.org"
+  arch: "https://mailarchive.ietf.org/arch/browse/mimi/"
+  github: "bifurcation/mimi-arch"
 
 author:
  -
