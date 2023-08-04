@@ -188,6 +188,10 @@ servers) have the same view of the room's metadata.  Changes to room metadata
 can be proposed by either clients or servers, but are subject to policy
 constraints as discussed in {{policy}}.
 
+The creation of a room is a local operation on the hub server, and thus outside
+the scope of MIMI.  The hub server establishes the initial state of the room,
+including the initial membership and policy.
+
 Each room has associated to it an end-to-end security context.  Public aspects
 of this context are known to the servers involved in the room, but private
 aspects are known only to the clients participating in the room.  For example,
