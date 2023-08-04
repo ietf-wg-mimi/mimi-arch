@@ -274,7 +274,7 @@ several aspects of the room's behavior, for example:
 The hub server for a room defines the _policy envelope_ for the room (the set of
 of acceptable policies for the room.  The hub also sets the initial policy for
 the room when it is created.  Pursuant to that initial policy, the clients and
-servers participating in the room may then make further changes to the policy. 
+servers participating in the room may then make further changes to the policy.
 
 At any given time, all of the clients and servers have the same view of the
 room's policy.  A client or server that receives an event that is not compliant
@@ -307,7 +307,7 @@ The transport layer defines how events move between servers.  Servers are
 generally assumed to be highly available and reachable over the Internet.
 
 The signaling layer defines the structure of a room's events, for example, the
-syntax for events that add or remove users or update a room's metadata.   
+syntax for events that add or remove users or update a room's metadata.
 
 The delivery service layer defines objects and ancillary non-event interactions
 that support the alignent of the group's end-to-end security context to its
@@ -342,7 +342,7 @@ The layers are largely nested within one another, in the sense that
 transport-layer protocol messages will carry signaling messages, which will
 embed delivery-service messages with end-to-end security messages inside of
 them. Some layers, though, might define operations that are independent of the
-others.  
+others.
 
 For example, for a server to to add a user to a room:
 
