@@ -34,25 +34,35 @@ informative:
 
 --- abstract
 
-TODO Abstract
-
+The More Instant Messaging Interoperability (MIMI) working group is defining a
+suite of protocols that allow messaging providers to interoperate with one
+another.  This document lays out an overall architecture enumerating the MIMI
+protocols and how they work together to enable an overall messaging experience.
 
 --- middle
 
 # Introduction
 
-TODO Introduction
+Today, there are many providers of messaging functionality.  A provider
+typically provides the client software (e.g., a mobile app) and the servers that
+facilitate communications among clients.  The core function of MIMI is enabling
+users to have messaging interactions across message providers.
+
+This overall goal breaks down into several sub-goals:
+
+* Message formats that enable the user-level features of a messaging system
+* Tracking of state across multiple providers
+* End-to-end security of user messages
+* Transport of protocol messages among providers
+
+In this document, we describe the high-level functions of these protocols, and
+how they work toegether to enable an overall messaging application.
 
 # Conventions and Definitions
 
 {::boilerplate bcp14-tagged}
 
 # Overall Scope
-
-Today, there are many providers of messaging functionality.  A provider
-typically provides the client software (e.g., a mobile app) and the servers that
-facilitate communications among clients.  The core function of MIMI is enabling
-users to have messaging interactions across message providers.
 
 {{overview}} shows the critical entities in the overall MIMI system and their
 interactions.  Each human user is represented in the system by one or more
