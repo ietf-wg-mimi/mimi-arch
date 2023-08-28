@@ -274,7 +274,7 @@ servers.
 Each event is authenticated by its originating server so that all other
 participating servers can verify its origin, even those to whom the event has
 been distributed by the hub.  If an event was ultimately created by a client, it
-is also authenticated by the client that created it. 
+is also authenticated by the client that created it.
 
 The MIMI transport protocol defines this event framework, including its
 authentication scheme, as well as the mechanics of how events are delivered from
