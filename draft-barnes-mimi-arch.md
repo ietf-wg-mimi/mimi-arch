@@ -135,6 +135,15 @@ The state of the room includes a few types of information, most importantly:
 * The user-level membership of the room
 * The authorization policy for the room
 
+> NOTE: We use the phrase "membership" for both users and clients.  It might be
+> clearer to invent some distinct terminology for these notions.
+
+> NOTE: In the below, we discuss user-level membership as something independent
+> from, and managed separately from, the end-to-end security state of the room.
+> Another possibility is that the user-level membership could be derived from
+> the client-level membership, in the sense that a user is a member if and only
+> if they have one or more clients joined.
+
 ## End-to-End Security State
 
 Messages sent within a room are protected by an end-to-end security protocol to
@@ -230,7 +239,7 @@ Note that some parts of the overall system are explicitly out of scope for MIMI.
 Namely, client-server interactions internal to a provider (indicated by
 "(Provider)" in {{fig-protocols}}) can be arranged however the provider likes.
 
-A MIMI server effectively participates in a few classes of protocols:
+A MIMI server thus participates in a few classes of protocols:
 
 * A transport protocol
 * Control protocols
@@ -324,7 +333,8 @@ to facilitate delivery to the clients participating in a room.
 
 # Actors, Identifiers, and Authentication
 
-[[ TODO(RLB): Revise to reuse concepts from draft-mahy-mimi-identity ]]
+> NOTE: This section is obsolete.  It should be rewritten to use concepts and
+> terminology from draft-mahy-mimi-identity.
 
 There are three types of identified actor in the MIMI system:
 
