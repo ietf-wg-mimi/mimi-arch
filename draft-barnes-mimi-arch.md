@@ -161,7 +161,7 @@ with the room in some way.  The specific list of ways in which a user may
 participate is defined by authorization policy, as discussed in {{policy}}.
 
 Note the parallel terminology with regard to inclusion of clients or users in
-the room: 
+the room:
 
 * A *client* is a *member* of the *end-to-end security state* of the room
 * A *user* is a *participant* in the room
@@ -350,7 +350,7 @@ actions, each actor presents one or more credentials that associate a signature
 key pair to their identifiers.  Protocol messages are then signed by their
 senders to authenticate the origin of the message.
 
-For a deeper discussion of identity, see {{?draft-mahy-mimi-identity}}.
+For a deeper discussion of identity, see {{?I-D.mahy-mimi-identity}}.
 
 # Security Considerations
 
