@@ -62,6 +62,8 @@ how they work toegether to enable an overall messaging application.
 
 {::boilerplate bcp14-tagged}
 
+Terms are generally introduced in context, indicated by _emphasis_.
+
 # Overall Scope
 
 {{overview}} shows the critical entities in the overall MIMI system and their
@@ -132,17 +134,8 @@ the scope of MIMI.  The hub server establishes the initial state of the room.
 The state of the room includes a few types of information, most importantly:
 
 * The end-to-end security state of the room
-* The user-level membership of the room
+* The list of users participating of the room (i.e., _participants_)
 * The authorization policy for the room
-
-> NOTE: We use the phrase "membership" for both users and clients.  It might be
-> clearer to invent some distinct terminology for these notions.
-
-> NOTE: In the below, we discuss user-level membership as something independent
-> from, and managed separately from, the end-to-end security state of the room.
-> Another possibility is that the user-level membership could be derived from
-> the client-level membership, in the sense that a user is a member if and only
-> if they have one or more clients joined.
 
 ## End-to-End Security State
 
@@ -153,7 +146,7 @@ provisioned to any client from which a user can interact with the room.  The
 state of this end-to-end security protocol thus represents the precise set of
 clients that can send and receive messages in the room, the most precise notion
 of membership for a room.  A client that has the required keys for end-to-end
-security is said to be _joined_ to the end-to-end security state of the room.
+security is said to be a member of the end-to-end security state of the room.
 
 The end-to-end security state of a room has public and private aspects.  Servers
 may store the public aspects of the end-to-end security state, such as
@@ -161,22 +154,30 @@ identities and credentials presented by the clients in the room.  The private
 aspects of the group, such as the symmetric encryption keys, are known only to
 the clients.
 
-## Membership
+## Participants
 
-The membership of a room is the set of users who are allowed to participate in
-the room in some way.  The specific list of ways in which a user may
+The _participant list_ for a room is the set of users who are allowed to interact
+with the room in some way.  The specific list of ways in which a user may
 participate is defined by authorization policy, as discussed in {{policy}}.
 
-This is a more coarse-grained notion of membership than the client-level notion.
-Ideally, the two are aligned, with each member user having at least one client
-joined to the end-to-end security state, and each joined client owned by a
-member user.  A user may be a member of a group without any client belonging to
-the user being part of the end-to-end security state of the room.  (In such a
-case, a user will not be able to read or send messages, but may be able to take
-other actions.  It is up to client implementations how this state is
-represented) The reverse situation is forbidden; a client belonging to a user
-may be joined to the end-to-end security state of the room only if its user is a
-member.
+Note the parallel terminology with regard to inclusion of clients or users in
+the room: 
+
+* A *client* is a *member* of the *end-to-end security state* of the room
+* A *user* is a *participant* in the room
+
+The user-level _participant list_ and the client-level _membership_ of the room
+are distinct entities managed by separate protocols, but they must be consistent
+with each other.  A client may be a member of the E2EE state of a room only if
+its user is a participant in the room.  However, a user may be a participant in
+a room without any client belonging to the user being part of the end-to-end
+security state of the room.  (Such a user will not be able to read or send
+messages, but may be able to take other actions.  It is up to client
+implementations how this state is represented.)
+
+A user with at least one client joined to the end-to-end security state of the
+room is known as an _active user_, since such a user can fully participate in
+the room.
 
 ## Membership Changes
 
@@ -333,30 +334,23 @@ to facilitate delivery to the clients participating in a room.
 
 # Actors, Identifiers, and Authentication
 
-> NOTE: This section is obsolete.  It should be rewritten to use concepts and
-> terminology from draft-mahy-mimi-identity.
+There are several types of entity to be identified in the MIMI system, including:
 
-There are three types of identified actor in the MIMI system:
-
+* Rooms,
 * Servers,
 * Users, and
 * Clients.
 
 A server's identity is effectively the identity of the provider it represents.
-Servers are represented by domain names {{!RFC1035}}.  User identities are
-provider-specific, and thus scoped to a given server identity.  Likewise, a
-client's identity is within the scope of its user.
-
-> TODO: Define syntax for these identifiers. Something like:
->
-> * Server: `example.com`
-> * User: `@user@example.com`
-> * Client: `%device@user@example.com`
+A room is hosted by a single hub server at a given time, so its identity is
+within the scope of the hub server's identity.
 
 To facilitate the application of policies based on these identifiers to protocol
 actions, each actor presents one or more credentials that associate a signature
 key pair to their identifiers.  Protocol messages are then signed by their
 senders to authenticate the origin of the message.
+
+For a deeper discussion of identity, see {{?draft-mahy-mimi-identity}}.
 
 # Security Considerations
 
