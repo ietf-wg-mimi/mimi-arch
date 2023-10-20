@@ -155,7 +155,7 @@ identities and credentials presented by the clients in the room.  The private
 aspects of the group, such as the symmetric encryption keys, are known only to
 the clients.
 
-## Participants
+## Participants and Members
 
 The _participant list_ for a room is the set of users who are allowed to interact
 with the room in some way.  The specific list of ways in which a user may
