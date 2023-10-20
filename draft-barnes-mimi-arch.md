@@ -71,12 +71,13 @@ to a single user.  Each provider is represented by a _server_ (logically a
 single server, but possibly realized by multiple physical devices).
 
 Messaging interactions are organized around _rooms_.  All messaging interactions
-take place in the context of a room.  Rooms have associated membership lists (in
-terms of both users and clients) and policies about things like how the room may
-be joined and what capabilities each member has.
+take place in the context of a room.  Rooms have a notion of
+_user participation_ as well as _client membership_, both tracked as lists.
+Rooms additionally have policies about things like how the room may be joined
+and what capabilities each member/participant has.
 
 The protocol interactions that drive a room unfold among the servers whose users
-are members of the room.  There is exactly one _hub_ server for the room, which
+are participants of the room.  There is exactly one _hub_ server for the room, which
 is in primary control of the room.  All other servers are known as _followers_.
 Follower servers interact directly with the hub server.  Interactions between
 clients occur indirectly, via the servers for the clients' providers.
@@ -132,17 +133,8 @@ the scope of MIMI.  The hub server establishes the initial state of the room.
 The state of the room includes a few types of information, most importantly:
 
 * The end-to-end security state of the room
-* The user-level membership of the room
+* The user-level participation state of the room
 * The authorization policy for the room
-
-> NOTE: We use the phrase "membership" for both users and clients.  It might be
-> clearer to invent some distinct terminology for these notions.
-
-> NOTE: In the below, we discuss user-level membership as something independent
-> from, and managed separately from, the end-to-end security state of the room.
-> Another possibility is that the user-level membership could be derived from
-> the client-level membership, in the sense that a user is a member if and only
-> if they have one or more clients joined.
 
 ## End-to-End Security State
 
@@ -161,32 +153,33 @@ identities and credentials presented by the clients in the room.  The private
 aspects of the group, such as the symmetric encryption keys, are known only to
 the clients.
 
-## Membership
+## Participation and Membership
 
-The membership of a room is the set of users who are allowed to participate in
-the room in some way.  The specific list of ways in which a user may
-participate is defined by authorization policy, as discussed in {{policy}}.
+Users are considered to be _participating_ in a room while clients of those
+users are _members_ of the end-to-end security state for the room.  The specific
+list of ways in which a user or client may participate is defined by
+authorization policy, as discussed in {{policy}}.
 
 This is a more coarse-grained notion of membership than the client-level notion.
-Ideally, the two are aligned, with each member user having at least one client
+Ideally, the two are aligned, with each participating user having at least one client
 joined to the end-to-end security state, and each joined client owned by a
-member user.  A user may be a member of a group without any client belonging to
+participating user.  A user may be a participant of a group without any client belonging to
 the user being part of the end-to-end security state of the room.  (In such a
 case, a user will not be able to read or send messages, but may be able to take
 other actions.  It is up to client implementations how this state is
 represented) The reverse situation is forbidden; a client belonging to a user
 may be joined to the end-to-end security state of the room only if its user is a
-member.
+joined participant of the room.
 
 ## Membership Changes
 
-The membership of a group can change over time, via _add_ and _remove_
+The collective membership of a group can change over time, via _add_ and _remove_
 operations at both the user level and the client level.  These operations are
 independent at the protocol level: For example, a user may be added to a room
 before any of its clients are available to join, or a user may begin using a new
-device (adding the device without changing the user-level membership).
+device (adding the device without changing the user-level participation).
 
-As discussed above, user-level and client-level membership must be kept in sync.
+As discussed above, user-level participation and client-level membership must be kept in sync.
 When a user is added, some set of their clients should be added as well; when a
 user leaves or is evicted, any clients joined to the room should be removed.
 The cryptographic constraints of end-to-end security protocols mean that servers
@@ -301,9 +294,9 @@ The **policy control protocol** distributes information about the policy
 envelope of a room, and allows participants in a room to propose changes to the
 policy within that envelope.
 
-The **membership control protocol** manages the user-level membership of the
+The **participation control protocol** manages the user-level membership of the
 room, including the various ways that members might join or leave a room (or be
-added/removed by other members).
+added/removed by other users).
 
 The **end-to-end security control protocol** manages the end-to-end security
 state of the room.  In addition to distributing messages that add or remove
