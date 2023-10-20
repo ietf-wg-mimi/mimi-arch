@@ -77,7 +77,7 @@ Rooms additionally have policies about things like how the room may be joined
 and what capabilities each member/participant has.
 
 The protocol interactions that drive a room unfold among the servers whose users
-are participants of the room.  There is exactly one _hub_ server for the room, which
+are participants in the room.  There is exactly one _hub_ server for the room, which
 is in primary control of the room.  All other servers are known as _followers_.
 Follower servers interact directly with the hub server.  Interactions between
 clients occur indirectly, via the servers for the clients' providers.
@@ -155,8 +155,9 @@ the clients.
 
 ## Participation and Membership
 
-Users are considered to be _participating_ in a room while clients of those
-users are _members_ of the end-to-end security state for the room.  The specific
+For clarity, we use different words to express the inclusion of users and clients 
+in a room.  Users are `participants` in a room; clients are `members` of the
+end-to-end security state of the room.  The specific
 list of ways in which a user or client may participate is defined by
 authorization policy, as discussed in {{policy}}.
 
@@ -173,7 +174,7 @@ joined participant of the room.
 
 ## Membership Changes
 
-The collective membership of a group can change over time, via _add_ and _remove_
+The participant list and client membership of a group can change over time, via _add_ and _remove_
 operations at both the user level and the client level.  These operations are
 independent at the protocol level: For example, a user may be added to a room
 before any of its clients are available to join, or a user may begin using a new
