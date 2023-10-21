@@ -155,7 +155,7 @@ the clients.
 
 ## Participation and Membership
 
-For clarity, we use different words to express the inclusion of users and clients 
+For clarity, we use different words to express the inclusion of users and clients
 in a room.  Users are `participants` in a room; clients are `members` of the
 end-to-end security state of the room.  The specific
 list of ways in which a user or client may participate is defined by
