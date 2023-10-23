@@ -73,7 +73,9 @@ to a single user.  Each provider is represented by a _server_ (logically a
 single server, but possibly realized by multiple physical devices).
 
 Messaging interactions are organized around _rooms_.  All messaging interactions
-take place in the context of a room.  Rooms have a notion of
+take place in the context of a room.  (Some non-messaging interactions may take
+place outside of a room, such as operations to fetch information required to set
+up a room.)  Rooms have a notion of
 _user participation_ as well as _client membership_, both tracked as lists.
 Rooms additionally have policies about things like how the room may be joined
 and what capabilities each member/participant has.
@@ -123,11 +125,12 @@ clients occur indirectly, via the servers for the clients' providers.
 # Room State
 
 A room represnts a messaging interaction among a specific set of clients, with a
-single _state_.  At any given time, all of the clients and servers participating
-in the room have the same view of the room's state.  Changes to the room's state
-can be proposed by either clients or servers, though as dicussed in {{policy}},
-one important aspect of the room's state is an authorization policy that
-determines which actors are allowed to make which changes.
+single _state_.  A major goal of the MIMI protocols is to syncrhonize the state
+of a room across all of the servers and clients participating in the room.
+Changes to the room's state can be proposed by either clients or servers, though
+as dicussed in {{policy}}, one important aspect of the room's state is an
+authorization policy that determines which actors are allowed to make which
+changes.
 
 The creation of a room is a local operation on the hub server, and thus outside
 the scope of MIMI.  The hub server establishes the initial state of the room.
@@ -137,6 +140,32 @@ The state of the room includes a few types of information, most importantly:
 * The end-to-end security state of the room
 * The user-level participation state of the room
 * The authorization policy for the room
+
+~~~~~ aasvg
++------------------+   +-----------------------+   +---------------+
+|                  |   |                       |   |               |
+|  Authorization   |   |    Participant List   |   | E2E Security  |
+|      Policy      |   |                       |   |     State     |
+|                  |   |                       |   |               |
+|  .------------.  |   |  .-----------------.  |   |  .---------.  |
+| | User 1 Capas +-------+  User 1 (active)  +-------+ Client 1a | |
+|  '------------'  |   |  '-----------------'  |   |  '---------'  |
+|                  |   |                       |   |               |
+|  .------------.  |   |  .-----------------.  |   |  .---------.  |
+| | User 2 Capas +-------+  User 2 (active)  +---+---+ Client 2a | |
+|  '------------'  |   |  '-----------------'  | | |  '---------'  |
+|                  |   |                       | | |               |
+|                  |   |                       | | |  .---------.  |
+|                  |   |                       | +---+ Client 2b | |
+|                  |   |                       |   |  '---------'  |
+|                  |   |                       |   |               |
+|  .------------.  |   |  .-----------------.  |   |               |
+| | User 2 Capas +-------+ User 2 (inactive) | |   |               |
+|  '------------'  |   |  '-----------------'  |   |               |
+|                  |   |                       |   |               |
++------------------+   +-----------------------+   +---------------+
+~~~~~
+{: #fig-room-state title="Elements of the Room State" }
 
 ## End-to-End Security State
 
@@ -320,8 +349,8 @@ the standard MIMI content format.  The end-to-end encapsuation ensures that the
 message content is only accessible to the clients participating in the room, not
 the servers that help to distribute it.
 
-The MIMI message format defines how clients achieve the various features of a
-messaging application, for example:
+The MIMI message format {{?I-D.ietf-mimi-content}} defines how clients achieve
+the various features of a messaging application, for example:
 
 * Text messaging
 * File attachements
@@ -332,6 +361,44 @@ messaging application, for example:
 Messages transit MIMI servers by means of a **message forwarding protocol**,
 which carries an opaque, encrypted message payload together with enough metadata
 to facilitate delivery to the clients participating in a room.
+
+~~~~~ aasvg
+  Users            Provider X                Room 123
+                 .--------------------.    .----------------.
+                |                      |  |                  |
+ .-----.        | +----------+     +------------+            |
+| Alice +-------->+ Client A +---->+  Server 1  | (Follower) |
+ '-----'        | +----------+     +----------+-+            |
+                |                      |  |   |              |
+                 '--------------------'   |   |              |
+                                          |   |              |
+                   Provider Y             |   |              |
+                 .--------------------.   |   |              |
+                |                      |  |   V              |
+ .---.          | +----------+     +----------+-+            |
+| Bob +<----------+ Client B +<----+  Server 2  | (Hub)      |
+ '---'          | +----------+     +----------+-+            |
+                |                      |  |   |              |
+                 '--------------------'   |   |              |
+                                          |   |              |
+                   Provider Z             |   |              |
+                 .--------------------.   |   |              |
+                |                      |  |   V              |
+ .-------.      | +----------+     +----------+-+            |
+| Charlie +<------+ Client C +<----+  Server 3  | (Follower) |
+ '-------'      | +----------+     +------------+            |
+                |                      |  |                  |
+                 '--------------------'    '----------------'
+~~~~~
+{: #fig-fanout title="The hub fans out messages to participating servers;
+servers deliver messages to users' clients." }
+
+When a client sends a message, the message is delivered to its provider's server
+using some provider-internal mechanism.  If the provider is not the hub, then
+the server forwards the message to the hub for delivery.  In either case, the
+hub distributes the message to all of the servers participating in the room.
+Each provider's server then forwards the message to clients of users who are
+participating in the room.
 
 # Actors, Identifiers, and Authentication
 
