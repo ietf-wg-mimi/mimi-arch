@@ -308,9 +308,8 @@ Client        Follower        Hub         Follower        Client
 ## End-to-End Security
 
 As noted above, all of the clients participating in a room are part of the same
-end-to-end security context.  This allows them to encrypt and integrity-protect
-their messages so that they are secure from inspection or tampering as they
-transit MIMI servers.
+end-to-end security context.  This allows them to protect their messages so that
+they are secure from inspection or tampering as they transit MIMI servers.
 
 In addition to the message protection noted above, the end-to-end security layer
 of the protocol provides a few additional functions to the remainder of the
@@ -371,10 +370,9 @@ room, including the various ways that members might join or leave a room (or be
 added/removed by other users).
 
 As discussed above, the **end-to-end security control protocol** manages the
-end-to-end security state of the room.  In addition to distributing messages
-that add or remove clients from the end-to-end security state, this protocol
-also allows servers to distribute cryptographic information that clients have
-pre-registered, which allows clients to be asynchronously added to rooms.
+end-to-end security state of the room.  This protocol also allows servers to
+distribute cryptographic information that clients have pre-registered, which
+allows clients to be asynchronously added to rooms.
 
 ## Messages
 
