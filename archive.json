@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-05-07T01:12:13.276111+00:00",
+  "timestamp": "2024-05-09T01:11:47.885563+00:00",
   "repo": "ietf-wg-mimi/mimi-arch",
   "labels": [
     {
@@ -370,9 +370,17 @@
       ],
       "body": "We should reflect any protocol considerations around metadata here, e.g., to justify decisions to expose metadata.",
       "createdAt": "2024-04-10T16:09:09Z",
-      "updatedAt": "2024-04-10T18:30:15Z",
+      "updatedAt": "2024-05-08T17:58:09Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "tgeoghegan",
+          "authorAssociation": "NONE",
+          "body": "x-posting some text from the mimi-protocol issue we duped here:\r\n\r\n>We should avoid leaking metadata in the MIMI protocol, for example:\r\n\r\n>    The number of devices used by each user\r\n>    Which users are participating in which groups\r\n\r\n>The demands of policy enforcement will require some level of metadata exposure. But we should avoid exposing metadata more broadly than is required.",
+          "createdAt": "2024-05-08T17:58:08Z",
+          "updatedAt": "2024-05-08T17:58:08Z"
+        }
+      ]
     }
   ],
   "pulls": [
