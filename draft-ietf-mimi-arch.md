@@ -531,6 +531,29 @@ senders to authenticate the origin of the message.
 
 For a deeper discussion of identity, see {{?I-D.mahy-mimi-identity}}.
 
+# Minimal Metadata Mode
+
+In MIMI's regular mode of operation, the identity of room participants is
+visible to the room's Hub. For cases where this is not desirable, MIMI supports
+a Minimal Metadata mode, where per-group pseudonyms take the place of user- and
+client identities on the Hub. While this limits the visibility of the Hub into
+group membership, group members can still determine one-another's identities.
+
+Identities are protected from the hub through the use of pseudonymous credential
+and encryption of (non-pseudonymous) client credentials on the level of MLS. A
+key management layer on top of MLS to manages the encryption keys and ensures
+that members are always able to learn the identity of all participants by
+decrypting the client credentials. 
+
+The key management layer requires that users perform a connection establishment
+protocol with any user they want to add to a room. In addition, new room
+participants entering the room through a join operation need to first learn the
+necessary key material to de-pseudonymize existing participants. The same goes
+for new clients of existing participants.
+
+TODO: Add more details on connection establishment once it's better defined.
+
+
 # Security Considerations
 
 TODO
