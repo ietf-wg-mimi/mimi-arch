@@ -543,7 +543,7 @@ Identities are protected from the hub through the use of pseudonymous credential
 and encryption of (non-pseudonymous) client credentials on the level of MLS. A
 key management layer on top of MLS to manages the encryption keys and ensures
 that members are always able to learn the identity of all participants by
-decrypting the client credentials. 
+decrypting the client credentials.
 
 The key management layer requires that users perform a connection establishment
 protocol with any user they want to add to a room. In addition, new room
