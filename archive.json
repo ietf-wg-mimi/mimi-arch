@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-10-10T01:36:05.102830+00:00",
+  "timestamp": "2024-10-13T01:41:43.000257+00:00",
   "repo": "ietf-wg-mimi/mimi-arch",
   "labels": [
     {
@@ -682,6 +682,32 @@
           ]
         }
       ]
+    },
+    {
+      "number": 16,
+      "id": "PR_kwDOKDHiF85-Nxz0",
+      "title": "Add section on minimal metadata mode",
+      "url": "https://github.com/ietf-wg-mimi/mimi-arch/pull/16",
+      "state": "OPEN",
+      "author": "kkohbrok",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "Add a brief section on minimal metadata mode to the arch doc. I hope I hit the right level of detail for this document. I'm sure we can refine the description once we start merging the mode into the main protocol doc.",
+      "createdAt": "2024-10-10T12:24:18Z",
+      "updatedAt": "2024-10-11T10:10:44Z",
+      "baseRepository": "ietf-wg-mimi/mimi-arch",
+      "baseRefName": "main",
+      "baseRefOid": "ec0b19af7641403a53364425ee534fb38d6c3372",
+      "headRepository": "kkohbrok/mimi-arch",
+      "headRefName": "konrad/pseudonymous_mode",
+      "headRefOid": "e2e33c26a763ff84f1522adbced77f7167e142f7",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
     }
   ]
 }
