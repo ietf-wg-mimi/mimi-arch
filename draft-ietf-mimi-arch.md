@@ -79,7 +79,7 @@ MAY also be called _Devices_ to differentiate them from a named application.
 
 _Server_: A logical location operated by a messaging provider which ensures
 message and information delivery. A server may be realized by multiple physical
-computers. Servers own users which belong to them. Servers are considered to be
+computers. Users have accounts on a specific server. Servers are considered to be
 "participating" in a room if they have at least one joined user participant.
 
 _Hub_: The specific server in a room with operational responsibility for delivery
@@ -239,7 +239,7 @@ The state of the room includes a few types of information, most importantly:
 |                  |   |                       |   |  '---------'  |
 |                  |   |                       |   |               |
 |  .------------.  |   |  .-----------------.  |   |               |
-| | User 2 Capas +-------+ User 2 (inactive) | |   |               |
+| | User 3 Capas +-------+ User 3 (inactive) | |   |               |
 |  '------------'  |   |  '-----------------'  |   |               |
 |                  |   |                       |   |               |
 +------------------+   +-----------------------+   +---------------+
@@ -321,7 +321,7 @@ several aspects of the room's behavior, for example:
     * Grant or deny capabilities to users?
 
 The hub server for a room defines the _policy envelope_ for the room, the set of
-of acceptable policies for the room.  The hub also sets the initial policy for
+acceptable policies for the room.  The hub also sets the initial policy for
 the room when it is created.  Pursuant to that initial policy, the clients and
 servers participating in the room may then make further changes to the policy.
 
@@ -455,7 +455,7 @@ allows clients to be asynchronously added to rooms.
 
 ## Messages
 
-Mesage events are end-to-end secure objects that carry application messages in
+Mesage events are end-to-end secure objects that carry application messages,  often in
 the standard MIMI content format.  The end-to-end encapsuation ensures that the
 message content is only accessible to the clients participating in the room, not
 the servers that help to distribute it.
