@@ -4,8 +4,8 @@
 
 More Instant Messaging Interoperability                     R. L. Barnes
 Internet-Draft                                                     Cisco
-Intended status: Informational                              2 April 2024
-Expires: 4 October 2024
+Intended status: Informational                          21 November 2024
+Expires: 25 May 2025
 
 
    An Architecture for More Instant Messaging Interoperability (MIMI)
@@ -49,7 +49,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 4 October 2024.
+   This Internet-Draft will expire on 25 May 2025.
 
 Copyright Notice
 
@@ -138,9 +138,9 @@ Table of Contents
 
    _Server_: A logical location operated by a messaging provider which
    ensures message and information delivery.  A server may be realized
-   by multiple physical computers.  Servers own users which belong to
-   them.  Servers are considered to be "participating" in a room if they
-   have at least one joined user participant.
+   by multiple physical computers.  Users have accounts on a specific
+   server.  Servers are considered to be "participating" in a room if
+   they have at least one joined user participant.
 
    _Hub_: The specific server in a room with operational responsibility
    for delivery between all servers in the room.  This includes messages
@@ -311,7 +311,7 @@ Table of Contents
    |                  |   |                       |   |  '---------'  |
    |                  |   |                       |   |               |
    |  .------------.  |   |  .-----------------.  |   |               |
-   | | User 2 Capas +-------+ User 2 (inactive) | |   |               |
+   | | User 3 Capas +-------+ User 3 (inactive) | |   |               |
    |  '------------'  |   |  '-----------------'  |   |               |
    |                  |   |                       |   |               |
    +------------------+   +-----------------------+   +---------------+
@@ -410,8 +410,8 @@ Table of Contents
       -  Grant or deny capabilities to users?
 
    The hub server for a room defines the _policy envelope_ for the room,
-   the set of of acceptable policies for the room.  The hub also sets
-   the initial policy for the room when it is created.  Pursuant to that
+   the set of acceptable policies for the room.  The hub also sets the
+   initial policy for the room when it is created.  Pursuant to that
    initial policy, the clients and servers participating in the room may
    then make further changes to the policy.
 
@@ -564,7 +564,7 @@ Table of Contents
 5.4.  Messages
 
    Mesage events are end-to-end secure objects that carry application
-   messages in the standard MIMI content format.  The end-to-end
+   messages, often in the standard MIMI content format.  The end-to-end
    encapsuation ensures that the message content is only accessible to
    the clients participating in the room, not the servers that help to
    distribute it.
@@ -684,9 +684,9 @@ Table of Contents
    [I-D.ietf-mimi-content]
               Mahy, R., "More Instant Messaging Interoperability (MIMI)
               message content", Work in Progress, Internet-Draft, draft-
-              ietf-mimi-content-02, 4 March 2024,
+              ietf-mimi-content-04, 10 June 2024,
               <https://datatracker.ietf.org/doc/html/draft-ietf-mimi-
-              content-02>.
+              content-04>.
 
    [I-D.mahy-mimi-identity]
               Mahy, R., "More Instant Messaging Interoperability (MIMI)
