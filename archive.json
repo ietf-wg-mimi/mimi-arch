@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-11-21T01:40:50.025155+00:00",
+  "timestamp": "2024-11-24T01:47:36.122304+00:00",
   "repo": "ietf-wg-mimi/mimi-arch",
   "labels": [
     {
@@ -714,26 +714,42 @@
       "id": "PR_kwDOKDHiF86CPvnf",
       "title": "typos and small fixes",
       "url": "https://github.com/ietf-wg-mimi/mimi-arch/pull/17",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "rohanmahy",
       "authorAssociation": "NONE",
       "assignees": [],
       "labels": [],
       "body": "Changed \"Servers own users which belong to them.\"\r\nOtherwise just typos",
       "createdAt": "2024-11-18T13:13:02Z",
-      "updatedAt": "2024-11-18T13:13:03Z",
+      "updatedAt": "2024-11-21T22:32:39Z",
       "baseRepository": "ietf-wg-mimi/mimi-arch",
       "baseRefName": "main",
       "baseRefOid": "ec0b19af7641403a53364425ee534fb38d6c3372",
       "headRepository": "rohanmahy/mimi-arch",
       "headRefName": "rohan/nov2024",
       "headRefOid": "25e14d2d869932a918d2ec946faca4b8f880fde4",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2024-11-21T22:32:39Z",
+      "mergedAt": "2024-11-21T22:32:39Z",
+      "mergedBy": "bifurcation",
+      "mergeCommit": {
+        "oid": "ec119c212f5058da1defdb38d701bffe57847f37"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOKDHiF86SNG9r",
+          "commit": {
+            "abbreviatedOid": "25e14d2"
+          },
+          "author": "bifurcation",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-11-21T22:32:32Z",
+          "updatedAt": "2024-11-21T22:32:32Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
