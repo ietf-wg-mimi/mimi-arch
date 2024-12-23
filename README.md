@@ -1,17 +1,17 @@
 # An Architecture for More Instant Messaging Interoperability (MIMI)
 
-This is the working area for the individual Internet-Draft, "An Architecture for More Instant Messaging Interoperability (MIMI)".
+This is the working area for the MIMI WG Internet-Draft, "An Architecture for More Instant Messaging Interoperability (MIMI)".
 
-* [Editor's Copy](https://bifurcation.github.io/mimi-arch/#go.draft-barnes-mimi-arch.html)
-* [Datatracker Page](https://datatracker.ietf.org/doc/draft-barnes-mimi-arch)
-* [Individual Draft](https://datatracker.ietf.org/doc/html/draft-barnes-mimi-arch)
-* [Compare Editor's Copy to Individual Draft](https://bifurcation.github.io/mimi-arch/#go.draft-barnes-mimi-arch.diff)
+* [Editor's Copy](https://ietf-wg-mimi.github.io/mimi-protocol/#go.draft-ietf-mimi-arch.html)
+* [Datatracker Page](https://datatracker.ietf.org/doc/draft-ietf-mimi-arch)
+* [Draft](https://datatracker.ietf.org/doc/html/draft-ietf-mimi-arch)
+* [Compare Editor's Copy to Individual Draft](https://ietf-wg-mimi.github.io/mimi-protocol/#go.draft-ietf-mimi-arch.diff)
 
 
 ## Contributing
 
 See the
-[guidelines for contributions](https://github.com/bifurcation/mimi-arch/blob/main/CONTRIBUTING.md).
+[guidelines for contributions](https://github.com/ietf-wg-mimi/mimi-arch/blob/main/CONTRIBUTING.md).
 
 Contributions can be made by creating pull requests.
 The GitHub interface supports creating pull requests using the Edit (✏) button.
