@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-12-22T01:43:14.233075+00:00",
+  "timestamp": "2024-12-24T01:37:01.752597+00:00",
   "repo": "ietf-wg-mimi/mimi-arch",
   "labels": [
     {
@@ -695,7 +695,7 @@
       "labels": [],
       "body": "Add a brief section on minimal metadata mode to the arch doc. I hope I hit the right level of detail for this document. I'm sure we can refine the description once we start merging the mode into the main protocol doc.",
       "createdAt": "2024-10-10T12:24:18Z",
-      "updatedAt": "2024-10-11T10:10:44Z",
+      "updatedAt": "2024-12-23T19:42:51Z",
       "baseRepository": "ietf-wg-mimi/mimi-arch",
       "baseRefName": "main",
       "baseRefOid": "ec0b19af7641403a53364425ee534fb38d6c3372",
@@ -707,7 +707,40 @@
       "mergedBy": null,
       "mergeCommit": null,
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOKDHiF86WRG53",
+          "commit": {
+            "abbreviatedOid": "e2e33c2"
+          },
+          "author": "rohanmahy",
+          "authorAssociation": "NONE",
+          "state": "CHANGES_REQUESTED",
+          "body": "",
+          "createdAt": "2024-12-23T19:31:01Z",
+          "updatedAt": "2024-12-23T19:42:51Z",
+          "comments": [
+            {
+              "originalPosition": 8,
+              "body": "```suggestion\r\na Minimal Metadata mode, where per-group pseudonyms take the place of user and\r\n```",
+              "createdAt": "2024-12-23T19:31:01Z",
+              "updatedAt": "2024-12-23T19:42:51Z"
+            },
+            {
+              "originalPosition": 8,
+              "body": "> per-group pseudonyms\r\n\r\nIt would be nice to clarify that if you have a set of groups where you want correlation (my knitting friends), users/clients can share a pseudonym across those groups. Pseudonyms must not be shared across groups unless correlation amonth those groups is desired. (The default treatment would be to use a separate pseudonym per group).",
+              "createdAt": "2024-12-23T19:40:33Z",
+              "updatedAt": "2024-12-23T19:42:51Z"
+            },
+            {
+              "originalPosition": 19,
+              "body": ">The key management layer requires that users perform a connection establishment\r\nprotocol with any user they want to add to a room. \r\n\r\nI think this is a common pattern, but not strictly necessary, for example when join links are used.",
+              "createdAt": "2024-12-23T19:42:47Z",
+              "updatedAt": "2024-12-23T19:42:51Z"
+            }
+          ]
+        }
+      ]
     },
     {
       "number": 17,
@@ -747,6 +780,46 @@
           "body": "",
           "createdAt": "2024-11-21T22:32:32Z",
           "updatedAt": "2024-11-21T22:32:32Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 18,
+      "id": "PR_kwDOKDHiF86GHHZu",
+      "title": "Update README.md",
+      "url": "https://github.com/ietf-wg-mimi/mimi-arch/pull/18",
+      "state": "OPEN",
+      "author": "rohanmahy",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "update with correct links for editor's copy/diffs/etc",
+      "createdAt": "2024-12-23T19:29:05Z",
+      "updatedAt": "2024-12-23T19:32:08Z",
+      "baseRepository": "ietf-wg-mimi/mimi-arch",
+      "baseRefName": "main",
+      "baseRefOid": "ec119c212f5058da1defdb38d701bffe57847f37",
+      "headRepository": "rohanmahy/mimi-arch",
+      "headRefName": "patch-1",
+      "headRefOid": "8dbe1fa4b553679b294f162983312b252519c29b",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKDHiF86WRHIO",
+          "commit": {
+            "abbreviatedOid": "8dbe1fa"
+          },
+          "author": "turt2live",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-12-23T19:32:08Z",
+          "updatedAt": "2024-12-23T19:32:08Z",
           "comments": []
         }
       ]
