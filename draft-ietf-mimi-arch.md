@@ -535,7 +535,7 @@ For a deeper discussion of identity, see {{?I-D.mahy-mimi-identity}}.
 
 In MIMI's regular mode of operation, the identity of room participants is
 visible to the room's Hub. For cases where this is not desirable, MIMI supports
-a Minimal Metadata mode, where per-group pseudonyms take the place of user- and
+a Minimal Metadata mode, where per-group pseudonyms take the place of user and
 client identities on the Hub. While this limits the visibility of the Hub into
 group membership, group members can still determine one-another's identities.
 
