@@ -546,10 +546,11 @@ that members are always able to learn the identity of all participants by
 decrypting the client credentials.
 
 The key management layer requires that users perform a connection establishment
-protocol with any user they want to add to a room. In addition, new room
-participants entering the room through a join operation need to first learn the
-necessary key material to de-pseudonymize existing participants. The same goes
-for new clients of existing participants.
+protocol with any user they want to add to a room via the add operation. In
+addition, new room participants (or clients of existing participants) entering
+the room through a join operation need to first learn the necessary key material
+to de-pseudonymize existing participants, for example through a join link
+provided by a participant.
 
 TODO: Add more details on connection establishment once it's better defined.
 
