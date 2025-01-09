@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-01-07T01:38:00.721530+00:00",
+  "timestamp": "2025-01-09T02:04:31.159657+00:00",
   "repo": "ietf-wg-mimi/mimi-arch",
   "labels": [
     {
@@ -695,13 +695,13 @@
       "labels": [],
       "body": "Add a brief section on minimal metadata mode to the arch doc. I hope I hit the right level of detail for this document. I'm sure we can refine the description once we start merging the mode into the main protocol doc.",
       "createdAt": "2024-10-10T12:24:18Z",
-      "updatedAt": "2024-12-23T19:42:51Z",
+      "updatedAt": "2025-01-08T15:16:17Z",
       "baseRepository": "ietf-wg-mimi/mimi-arch",
       "baseRefName": "main",
       "baseRefOid": "ec0b19af7641403a53364425ee534fb38d6c3372",
       "headRepository": "kkohbrok/mimi-arch",
       "headRefName": "konrad/pseudonymous_mode",
-      "headRefOid": "e2e33c26a763ff84f1522adbced77f7167e142f7",
+      "headRefOid": "ae6164c969c863683124e9d529f3944b6af14c6c",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -737,6 +737,46 @@
               "body": ">The key management layer requires that users perform a connection establishment\r\nprotocol with any user they want to add to a room. \r\n\r\nI think this is a common pattern, but not strictly necessary, for example when join links are used.",
               "createdAt": "2024-12-23T19:42:47Z",
               "updatedAt": "2024-12-23T19:42:51Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKDHiF86XPdA1",
+          "commit": {
+            "abbreviatedOid": "e2e33c2"
+          },
+          "author": "kkohbrok",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-01-08T15:05:58Z",
+          "updatedAt": "2025-01-08T15:05:58Z",
+          "comments": [
+            {
+              "originalPosition": 8,
+              "body": "The purpose of these pseudonyms is to hide the actual identities from the server not (necessarily) to enable pseudonyms that are visible to users. I'm hesitant to weaken privacy against the hub to enable \"user-level\" features that require the re-use of pseudonyms. We should probably just have separate mechanisms for pseudonymity on the hub level and pseudonymity w.r.t. other users.",
+              "createdAt": "2025-01-08T15:05:58Z",
+              "updatedAt": "2025-01-08T15:05:58Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKDHiF86XPe_d",
+          "commit": {
+            "abbreviatedOid": "e2e33c2"
+          },
+          "author": "kkohbrok",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-01-08T15:08:10Z",
+          "updatedAt": "2025-01-08T15:08:10Z",
+          "comments": [
+            {
+              "originalPosition": 19,
+              "body": "Hm, maybe I'm thinking too much in terms of MLS. In my mind, when using a join link it's more a user adding itself to a room, rather than one user adding another one. But I think I know what you mean and I'll try to change the text to make this a little clearer.",
+              "createdAt": "2025-01-08T15:08:10Z",
+              "updatedAt": "2025-01-08T15:08:11Z"
             }
           ]
         }
