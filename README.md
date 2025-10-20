@@ -1,11 +1,13 @@
+<!-- regenerate: on (set to off if you edit this file) -->
+
 # An Architecture for More Instant Messaging Interoperability (MIMI)
 
-This is the working area for the MIMI WG Internet-Draft, "An Architecture for More Instant Messaging Interoperability (MIMI)".
+This is the working area for the IETF [MIMI Working Group](https://datatracker.ietf.org/group/mimi/documents/) Internet-Draft, "An Architecture for More Instant Messaging Interoperability (MIMI)".
 
-* [Editor's Copy](https://ietf-wg-mimi.github.io/mimi-protocol/#go.draft-ietf-mimi-arch.html)
+* [Editor's Copy](https://ietf-wg-mimi.github.io/mimi-arch/#go.draft-ietf-mimi-arch.html)
 * [Datatracker Page](https://datatracker.ietf.org/doc/draft-ietf-mimi-arch)
-* [Draft](https://datatracker.ietf.org/doc/html/draft-ietf-mimi-arch)
-* [Compare Editor's Copy to Individual Draft](https://ietf-wg-mimi.github.io/mimi-protocol/#go.draft-ietf-mimi-arch.diff)
+* [Working Group Draft](https://datatracker.ietf.org/doc/html/draft-ietf-mimi-arch)
+* [Compare Editor's Copy to Working Group Draft](https://ietf-wg-mimi.github.io/mimi-arch/#go.draft-ietf-mimi-arch.diff)
 
 
 ## Contributing
@@ -13,9 +15,8 @@ This is the working area for the MIMI WG Internet-Draft, "An Architecture for Mo
 See the
 [guidelines for contributions](https://github.com/ietf-wg-mimi/mimi-arch/blob/main/CONTRIBUTING.md).
 
-Contributions can be made by creating pull requests.
-The GitHub interface supports creating pull requests using the Edit (✏) button.
-
+The contributing file also has tips on how to make contributions, if you
+don't already know how to do that.
 
 ## Command Line Usage
 
