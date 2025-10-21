@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-01-30T01:25:54.345445+00:00",
+  "timestamp": "2025-10-21T00:48:23.332048+00:00",
   "repo": "ietf-wg-mimi/mimi-arch",
   "labels": [
     {
@@ -381,6 +381,46 @@
           "updatedAt": "2024-05-08T17:58:08Z"
         }
       ]
+    },
+    {
+      "number": 19,
+      "id": "I_kwDOKDHiF86p0Sd0",
+      "title": "History syncing",
+      "url": "https://github.com/ietf-wg-mimi/mimi-arch/issues/19",
+      "state": "OPEN",
+      "author": "tgeoghegan",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "The MIMI architecture should consider syncing message history.",
+      "createdAt": "2025-02-12T18:34:10Z",
+      "updatedAt": "2025-02-12T18:34:38Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "tgeoghegan",
+          "authorAssociation": "NONE",
+          "body": "This came up while the WG was reviewing https://github.com/ietf-wg-mimi/draft-ietf-mimi-content/issues/29#issuecomment-2654494005",
+          "createdAt": "2025-02-12T18:34:36Z",
+          "updatedAt": "2025-02-12T18:34:36Z"
+        }
+      ]
+    },
+    {
+      "number": 20,
+      "id": "I_kwDOKDHiF86p0S5T",
+      "title": "Support for timeout features in MIMI rooms",
+      "url": "https://github.com/ietf-wg-mimi/mimi-arch/issues/20",
+      "state": "OPEN",
+      "author": "rohanmahy",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "There should be a documented way to do message timeout features like:\n- preventing a user from posting for a day (soft ban) because of a minor or subjective violation of the room conventions\n- \"slow mode\" in Discord, where you can only write a new top-level post in the room once every <x> minutes\n\nThis doesn't need we have to fully specify them, but it would be good to explain the design constraints.\n\nSince MIMI has no notion of clocks synchronized across a room, we don't want to require each client to independently use an absolute time to authorize a new incoming message post-timeout. That could result in some clients allowing a message and others not in the same room due to out-of-synch clocks.",
+      "createdAt": "2025-02-12T18:35:08Z",
+      "updatedAt": "2025-02-12T18:35:08Z",
+      "closedAt": null,
+      "comments": []
     }
   ],
   "pulls": [
@@ -829,24 +869,26 @@
       "id": "PR_kwDOKDHiF86GHHZu",
       "title": "Update README.md",
       "url": "https://github.com/ietf-wg-mimi/mimi-arch/pull/18",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "rohanmahy",
-      "authorAssociation": "NONE",
+      "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "update with correct links for editor's copy/diffs/etc",
       "createdAt": "2024-12-23T19:29:05Z",
-      "updatedAt": "2024-12-23T19:32:08Z",
+      "updatedAt": "2025-07-23T14:33:57Z",
       "baseRepository": "ietf-wg-mimi/mimi-arch",
       "baseRefName": "main",
       "baseRefOid": "ec119c212f5058da1defdb38d701bffe57847f37",
       "headRepository": "rohanmahy/mimi-arch",
       "headRefName": "patch-1",
       "headRefOid": "8dbe1fa4b553679b294f162983312b252519c29b",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2025-07-23T14:33:57Z",
+      "mergedAt": "2025-07-23T14:33:57Z",
+      "mergedBy": "bifurcation",
+      "mergeCommit": {
+        "oid": "3357230bae9f45d18b7cf8b2d7a1915629bca353"
+      },
       "comments": [],
       "reviews": [
         {
