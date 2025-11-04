@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-10-21T00:48:23.332048+00:00",
+  "timestamp": "2025-11-04T00:48:42.976626+00:00",
   "repo": "ietf-wg-mimi/mimi-arch",
   "labels": [
     {
@@ -419,6 +419,22 @@
       "body": "There should be a documented way to do message timeout features like:\n- preventing a user from posting for a day (soft ban) because of a minor or subjective violation of the room conventions\n- \"slow mode\" in Discord, where you can only write a new top-level post in the room once every <x> minutes\n\nThis doesn't need we have to fully specify them, but it would be good to explain the design constraints.\n\nSince MIMI has no notion of clocks synchronized across a room, we don't want to require each client to independently use an absolute time to authorize a new incoming message post-timeout. That could result in some clients allowing a message and others not in the same room due to out-of-synch clocks.",
       "createdAt": "2025-02-12T18:35:08Z",
       "updatedAt": "2025-02-12T18:35:08Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 21,
+      "id": "I_kwDOKDHiF87Vn_kL",
+      "title": "Timestamp integrity for history",
+      "url": "https://github.com/ietf-wg-mimi/mimi-arch/issues/21",
+      "state": "OPEN",
+      "author": "rohanmahy",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Currently the integrity of the timestamp is available when franking, but only for active participants/member clients. It would be nice if I replace my phone, restoring my history, I can still verify the integrity of the original timestamp (and Frank).\n\nwas copied from https://github.com/ietf-wg-mimi/mimi-protocol/issues/114",
+      "createdAt": "2025-11-03T22:49:24Z",
+      "updatedAt": "2025-11-03T22:49:24Z",
       "closedAt": null,
       "comments": []
     }
